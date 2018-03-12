@@ -8,19 +8,158 @@
     <link rel="stylesheet" href="style.css">
     <style>
         #fade:hover {
-            
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
         }
         #back_pulse:hover {
-            
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+            animation-name: backPulse;
+            animation-duration: .8s;
+            animation-iteration-count: infinite;
         }
-        #sweep_right:hover {
-            
+        #sweep_right {
+            background-image: linear-gradient(to left, #333 50%, #fff 50%);
+            background-size: 200% 100%;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }            
+        #sweep_right:hover {            
+            color: #000;
+            border-color: #fff;
+            background-position: bottom left;
+            -webkit-transition: all 0.25s ease-in;
+            -moz-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+        }
+        #sweep_left {
+            background-image: linear-gradient(to right, #333 50%, #fff 50%);
+            background-size: 201% 100%;
+            background-repeat: no-repeat;
+            background-position: bottom left;
         }
         #sweep_left:hover {
-    
+            color: #000;
+            /* border-color: #fff; */
+            background-position: bottom right;
+            -webkit-transition: all 0.25s ease-in;
+            -moz-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+        }
+        #sweep_bottom {
+            background-image: linear-gradient(to top, #333 50%, #fff 50%);
+            background-size: 100% 200%;
+            background-repeat: no-repeat;
+            background-position: bottom;
         }
         #sweep_bottom:hover {
-    
+            color: #000;
+            /* border-color: #fff; */
+            background-position: top;
+            -webkit-transition: all 0.25s ease-in;
+            -moz-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+        }
+        #sweep_top {
+            background-image: linear-gradient(to bottom, #333 50%, #fff 50%);
+            background-size: 100% 200%;
+            background-repeat: no-repeat;
+            background-position: top;
+        }
+        #sweep_top:hover {
+            color: #000;
+            /* border-color: #fff; */
+            background-position: bottom;
+            -webkit-transition: all 0.25s ease-in;
+            -moz-transition: all 0.25s ease-in;
+            transition: all 0.25s ease-in;
+        }
+        #bounce_right {
+            background-image: linear-gradient(to left, #333 50%, #fff 50%);
+            background-size: 200% 100%;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+        }   
+        #bounce_right:hover {
+            color: #000;
+            border-color: #fff;
+            animation-name: bounceRight;
+            animation-duration: .3s;
+            background-position: 0% 0%;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+        }
+        #bounce_left {
+            background-image: linear-gradient(to right, #333 50%, #fff 50%);
+            background-size: 200% 100%;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+        }
+        #bounce_left:hover {
+            color: #000;
+            border-color: #fff;
+            animation-name: bounceLeft;
+            animation-duration: .3s;
+            background-position: 100% 0%;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+        }
+        #bounce_bottom {
+            background-image: linear-gradient(to top, #333 50%, #fff 50%);
+            background-size: 100% 200%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        #bounce_bottom:hover {
+            color: #000;
+            border-color: #fff;
+            animation-name: bounceBottom;
+            animation-duration: .3s;
+            background-position: 0% 0%;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;    
+        }
+        #bounce_top:hover {
+            color: #000;
+            border-color: #fff;
+            animation-name: bounceTop;
+            animation-duration: .3s;
+            background-position: 0% 100%;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;    
+        }
+        @keyframes backPulse {
+            50% {opacity: .6;}
+        }
+        @keyframes bounceRight {
+            0%  {background-position: 100% 100%; }
+            40%  {background-position: 0% 0%; }
+            65%  {background-position: 8% 0%; }
+            100% {background-position: 0% 0%; }
+        }
+        @keyframes bounceLeft {
+            0%  {background-position: 0% 0%; }
+            40%  {background-position: 100% 0%; }
+            65%  {background-position: 92% 0%; }
+            100% {background-position: 100% 0%; }
+        }
+        @keyframes bounceBottom {
+            0%  {background-position: 0% 100%; }
+            40%  {background-position: 0% 0%; }
+            65%  {background-position: 0% 8%; }
+            100% {background-position: 0% 0%; }
+        }
+        @keyframes bounceTop {
+            0%  {background-position: 100% 100%; }
+            40%  {background-position: 0% 0%; }
+            65%  {background-position: 8% 0%; }
+            100% {background-position: 0% 0%; }
         }
     </style>
 </head>
@@ -91,8 +230,14 @@
             <a id="back_pulse">Back Pulse</a>
             <a id="sweep_right">Sweep to Right</a>
             <a id="sweep_left">Sweep to Left</a>
-            <a id="sweep_bottum">Sweep to Bottom</a>
+            <a id="sweep_bottom">Sweep to Bottom</a>
         </div>
+        <div class="links">
+            <a href="" id="sweep_top">Sweep to Top</a>
+            <a href="" id="bounce_right">Bounce to Right</a>
+            <a href="" id="bounce_left">Bounce to Left</a>
+            <a href="" id="bounce_bottom">Bounce to Bottom</a>
+        </div>    
     </div>
 </body>
 </html>
