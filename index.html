@@ -5,385 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flavor Town</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        .links a {
-            display: inline-block;
-            padding: 1em;
-            color: azure;
-            background-color: #333;
-            margin-bottom: 3em;
-            margin-right: 1em;
-            text-decoration: none;
-            border: 1px solid #000;
-            transition: all .15s ease-in-out;   
-        }
-        #grow {
-
-        }
-        #grow:hover {
-            transform: scale(1.1, 1.1);
-        }
-        #shrink {
-
-        }
-        #shrink:hover {
-            transform: scale(.85, .85);
-        }
-        #pulse {
-
-        }
-        #pulse:hover {
-            /* transform:  */
-            animation-name: pulse;
-            animation-duration: .75s;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-        }
-        #pulseGrow {
-
-        }
-        #pulseGrow:hover {
-            animation-name: pulseGrow;
-            animation-duration: .85s;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-        }
-        #pulseShrink:hover {
-            animation-name: pulseShrink;
-            animation-duration: .75s;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-        }
-        #push:hover {
-            animation-name: push;
-            animation-duration: .5s;
-            animation-timing-function: ease-in-out; 
-        }
-        #pop:hover {
-            animation-name: pop;
-            animation-duration: .3s;
-            animation-timing-function: ease-in-out;  
-        }
-        #bounce-in, #bounce-out {
-            transition: all .15s linear;
-        }
-        /*TODO fix the 'ease-out part, the mouse leave part and make it smooth*/
-        #bounce-in:hover {
-            animation-name: bounceIn;
-            animation-duration: 430ms;
-            animation-timing-function: ease-in-out; 
-            animation-fill-mode: forwards;
-        }
-        /*TODO fix the 'ease-out part, the mouse leave part and make it smooth*/
-        #bounce-out:hover {
-            animation-name: bounceOut;
-            animation-duration: .45s;
-            animation-timing-function: ease-in-out; 
-            animation-fill-mode: forwards;
-        }
-        #spin:hover {
-            animation-name: spin;
-            animation-duration: .85s;
-            animation-timing-function: linear;
-            animation-fill-mode: both; 
-        }
-        #rotate:hover {
-            transform: rotate(7.5deg);
-        }
-        #growtate:hover {
-            transform: rotate(5.5deg) scale(1.12, 1.12);
-        }
-        #float:hover {
-            transform: translate(0px, -10px);
-        }
-        #sink:hover {
-            transform: translate(0px, 10px);
-        }
-        #bob {
-            /* transition: transform .15s ease-in-out;    */
-        }
-        #bob:hover {
-            /* transform: translate(0px, -0px); */
-            animation-name: bob;
-            animation-duration: .8s;
-            /* animation-delay: .15s; */
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out; 
-        }
-        #hang:hover {
-            transform: translate(0px, 5px);
-            animation-name: hang;
-            animation-duration: .8s;
-            /* animation-delay: .15s; */
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out; 
+        #fade:hover {
             
         }
-        #skew:hover {
-            transform: skewX(-10deg);
-        }
-        #skew_forward:hover {
-            transform: matrix(1, 0, -.2, 1, 10, 0 );
-
-        }
-        #skew_backward:hover {
-            transform: matrix(1, 0, .2, 1, -10, 0 );
-        }
-        #wobble_horizontal:hover {
-            animation-name: wobbleHorizontal;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_vertical:hover {
-            animation-name: wobbleVertical;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_bottom_right:hover {
-            animation-name: wobbleBottomRight;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_top_right:hover {
-            animation-name: wobbleTopRight;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out;   
-        }
-        #wobble_bottom_left:hover {
-            animation-name: wobbleBottomLeft;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_top_left:hover {
-            animation-name: wobbleTopLeft;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_top:hover {
-            animation-name: wobbleTop;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_bottom:hover {
-            animation-name: wobbleBottom;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #wobble_skew:hover {
-            animation-name: wobbleSkew;
-            animation-duration: .8s;
-            animation-timing-function: ease-in-out; 
-        }
-        #buzz:hover {
-            animation-name: buzz;
-            animation-duration: .22s;
-            animation-iteration-count: infinite;
-        }
-        #buzz_out:hover {
-            /* TODO can probably still just be the buzz animation */
-            animation-name: buzzOut;
-            animation-duration: .22s;
-            animation-iteration-count: 2;
-            animation-timing-function: ease-out;
-        }
-        #forward:hover {
-            transform: translateX(10px);
-        }
-        #backward:hover {
-            transform: translateX(-10px);
-        }
-        @keyframes pulse {
-            50%  {transform: scale(.92, .92); }
-            100% {transform: scale(1.01, 1.01); }
-        }
-        @keyframes pulseGrow {
-            50%  {transform: scale(1.1, 1.1); }
-        }
-        @keyframes pulseShrink{
-            50%  {transform: scale(.9, .9); }
-        }
-        @keyframes push {
-            50%  {transform: scale(.72, .72); }
-            100% {transform: scale(1, 1); }
-        }
-        @keyframes pop {
-            50%  {transform: scale(1.12, 1.12); }
-            100% {transform: scale(1, 1); }
-        }
-        @keyframes bounceIn {
-            0%   {transform: scale(1, 1);}
-            40%  {transform: scale(1.12, 1.12);}
-            75%  {transform: scale(1.05, 1.05);}
-            100% {transform: scale(1.12, 1.12);}
-        }
-        @keyframes bounceOut {
-            40% {transform: scale(.85, .85);}
-            75% {transform: scale(1, 1);}
-            100% {transform: scale(.85, .85);}
-        }
-        @keyframes bob {
-            0% {transform: translate(0px, -5px);}
-            50% {transform: translate(0px, -10px);}
-            100% {transform: translate(0px, -5px);}
-        }
-        @keyframes spin {
-            0% {transform: rotate(0deg);}
-            100% {transform: rotate(360deg);}  
-        }
-        @keyframes hang {
-            0% {transform: translate(0px, 5px);}
-            50% {transform: translate(0px, 10px);}
-            100% {transform: translate(0px, 5px);}
-        }
-        @keyframes wobbleHorizontal {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: translate(-5px, 0px);}
-            40% {transform: translate(5px, 0px);}
-            60% {transform: translate(-5px, 0px);}
-            80% {transform: translate(5px, 0px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @keyframes wobbleVertical {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: translate(0px, -5px);}
-            40% {transform: translate(0px, 5px);}
-            60% {transform: translate(0px, -5px);}
-            80% {transform: translate(0px, 5px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @keyframes wobbleBottomRight {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: translate(5px, 5px);}
-            40% {transform: translate(-5px, -5px);}
-            60% {transform: translate(5px, 5px);}
-            80% {transform: translate(-5px, -5px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @keyframes wobbleBottomLeft {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: translate(-5px, 5px);}
-            40% {transform: translate(5px, -5px);}
-            60% {transform: translate(-5px, 5px);}
-            80% {transform: translate(5px, -5px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @keyframes wobbleTopLeft {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: translate(-5px, -5px);}
-            40% {transform: translate(5px, 5px);}
-            60% {transform: translate(-5px, -5px);}
-            80% {transform: translate(5px, 5px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @keyframes wobbleTopRight {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: translate(5px, -5px);}
-            40% {transform: translate(-5px, 5px);}
-            60% {transform: translate(5px, -5px);}
-            80% {transform: translate(-5px, 5px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @keyframes wobbleTop {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: matrix(1, 0, -.2, 1, 5, 0 );}
-            40% {transform: matrix(1, 0, .2, 1, -5, 0 );}
-            60% {transform: matrix(1, 0, -.2, 1, 5, 0 );}
-            80% {transform: matrix(1, 0, .2, 1, -5, 0 );}
-            100% {transform: translate(0px, 0px);}         
-        }
-        @keyframes wobbleBottom {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: matrix(1, 0, .2, 1, 5, 0 );}
-            40% {transform: matrix(1, 0, -.2, 1, -5, 0 );}
-            60% {transform: matrix(1, 0, .2, 1, 5, 0 );}
-            80% {transform: matrix(1, 0, -.2, 1, -5, 0 );}
-            100% {transform: translate(0px, 0px);}         
-                   
-        }
-        @keyframes wobbleSkew {
-            0% {transform: translate(0px, 0px);}
-            20% {transform: matrix(1, 0, -.2, 1, 0, 0 );}
-            40% {transform: matrix(1, 0, .2, 1,  0, 0 );}
-            60% {transform: matrix(1, 0, -.2, 1, 0, 0 );}
-            80% {transform: matrix(1, 0, .2, 1,  0, 0 );}
-            100% {transform: translate(0px, 0px);}         
-        }
-        @keyframes buzz {
-            0% {transform: translate(0px, 0px);}
-            25% {transform: rotate(-1.5deg) translate(-3px, 0px);}
-            50% {transform: rotate(1.5deg) translate(3px, 0px);}
-            75% {transform: rotate(-1.5deg) translate(-3px, 0px);}
-            100% {transform: rotate(1.5deg) translate(3px, 0px);}
-        }
-        @keyframes buzzOut {
-            0% {transform: translate(0px, 0px);}
-            25% {transform: rotate(-1.5deg) translate(-3px, 0px);}
-            50% {transform: rotate(1.5deg) translate(3px, 0px);}
-            75% {transform: rotate(-1.5deg) translate(-3px, 0px);}
-            100% {transform: rotate(1.5deg) translate(3px, 0px);}
+        #back_pulse:hover {
             
+        }
+        #sweep_right:hover {
+            
+        }
+        #sweep_left:hover {
+    
+        }
+        #sweep_bottom:hover {
+    
         }
     </style>
 </head>
 <body>
-    <div class="links">
-        <a id="grow" href="#">
-            Grow
-        </a>
-        <a id="shrink" href="#">
-            Shrink
-        </a>
-        <a id="pulse" href="#">
-            Pulse
-        </a>
-        <a id="pulseGrow" href="#">
-            Pulse Grow
-        </a>
-        <a id="pulseShrink" href="#">
-            Pulse Shrink
-        </a>
-        <a id="push" href="#">
-            Push
-        </a>
-        <a id="pop" href="#">
-            Pop
-        </a>
+    <div class="2d">
+        <h1>2D Transitions</h1>
+        <div class="links">
+            <a id="grow" href="#">
+                Grow
+            </a>
+            <a id="shrink" href="#">
+                Shrink
+            </a>
+            <a id="pulse" href="#">
+                Pulse
+            </a>
+            <a id="pulseGrow" href="#">
+                Pulse Grow
+            </a>
+            <a id="pulseShrink" href="#">
+                Pulse Shrink
+            </a>
+            <a id="push" href="#">
+                Push
+            </a>
+            <a id="pop" href="#">
+                Pop
+            </a>
+        </div>
+        <div class="links">
+            <a id="bounce-in" href="">Bounce In</a>
+            <a id="bounce-out" href="">Bounce Out</a>
+            <a id="spin" href="">Spin</a>
+            <a id="rotate" href="">Rotate</a>
+            <a id="growtate" href="">Growtate</a>
+            <a id="float" href="">Float</a>
+            <a id="sink" href="">Sink</a>
+            <a id="bob" href="">Bob</a>
+        </div>
+        <div class="links">
+            <a id="hang" href="">Hang</a>
+            <a id="skew" href="">Skew</a>
+            <a id="skew_forward" href="">Skew Forward</a>
+            <a id="skew_backward" href="">Skew Backward</a>
+            <a id="wobble_horizontal" href="">Wobble Horizontal</a>
+        </div>
+        <div class="links">
+            <a id="wobble_vertical" href="">Wobble Vertical</a>
+            <a id="wobble_bottom_right" href="">Wobble to Bottom Right</a>
+            <a id="wobble_bottom_left" href="">Wobble to Bottom Left</a>
+            <a id="wobble_top_right" href="">Wobble to Top Right</a>
+            <a id="wobble_top_left" href="">Wobble to Top Left</a>
+            <a id="wobble_top" href="">Wobble Top</a>
+        </div>
+        <div class="links">
+            <a id="wobble_bottom" href="">Wobble Bottom</a>
+            <a id="wobble_skew" href="">Wobble Skew</a>
+            <a id="buzz" href="">Buzz</a>
+            <a id="buzz_out" href="">Buzz Out</a>
+            <a id="forward" href="">Forward</a>
+            <a id="backward" href="">Backward</a>
+        </div>
     </div>
-    <div class="links">
-        <a id="bounce-in" href="">Bounce In</a>
-        <a id="bounce-out" href="">Bounce Out</a>
-        <a id="spin" href="">Spin</a>
-        <a id="rotate" href="">Rotate</a>
-        <a id="growtate" href="">Growtate</a>
-        <a id="float" href="">Float</a>
-        <a id="sink" href="">Sink</a>
-        <a id="bob" href="">Bob</a>
-    </div>
-    <div class="links">
-        <a id="hang" href="">Hang</a>
-        <a id="skew" href="">Skew</a>
-        <a id="skew_forward" href="">Skew Forward</a>
-        <a id="skew_backward" href="">Skew Backward</a>
-        <a id="wobble_horizontal" href="">Wobble Horizontal</a>
-    </div>
-    <div class="links">
-        <a id="wobble_vertical" href="">Wobble Vertical</a>
-        <a id="wobble_bottom_right" href="">Wobble to Bottom Right</a>
-        <a id="wobble_bottom_left" href="">Wobble to Bottom Left</a>
-        <a id="wobble_top_right" href="">Wobble to Top Right</a>
-        <a id="wobble_top_left" href="">Wobble to Top Left</a>
-        <a id="wobble_top" href="">Wobble Top</a>
-    </div>
-    <div class="links">
-        <a id="wobble_bottom" href="">Wobble Bottom</a>
-        <a id="wobble_skew" href="">Wobble Skew</a>
-        <a id="buzz" href="">Buzz</a>
-        <a id="buzz_out" href="">Buzz Out</a>
-        <a id="forward" href="">Forward</a>
-        <a id="backward" href="">Backward</a>
+    <div class="bg">
+        <h1>Background Transitions</h1>
+        <div class="links">
+            <a id="fade">Fade</a>
+            <a id="back_pulse">Back Pulse</a>
+            <a id="sweep_right">Sweep to Right</a>
+            <a id="sweep_left">Sweep to Left</a>
+            <a id="sweep_bottum">Sweep to Bottom</a>
+        </div>
     </div>
 </body>
 </html>

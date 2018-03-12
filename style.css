@@ -1,0 +1,302 @@
+.links a {
+    display: inline-block;
+    padding: 1em;
+    color: azure;
+    background-color: #333;
+    margin-bottom: 3em;
+    margin-right: 1em;
+    text-decoration: none;
+    border: 1px solid #000;
+    transition: all .15s ease-in-out;   
+}
+#grow:hover {
+    transform: scale(1.1, 1.1);
+}
+#shrink:hover {
+    transform: scale(.85, .85);
+}
+#pulse:hover {
+    /* transform:  */
+    animation-name: pulse;
+    animation-duration: .75s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+#pulseGrow:hover {
+    animation-name: pulseGrow;
+    animation-duration: .85s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+#pulseShrink:hover {
+    animation-name: pulseShrink;
+    animation-duration: .75s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+#push:hover {
+    animation-name: push;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out; 
+}
+#pop:hover {
+    animation-name: pop;
+    animation-duration: .3s;
+    animation-timing-function: ease-in-out;  
+}
+#bounce-in, #bounce-out {
+    transition: all .15s linear;
+}
+/*TODO fix the 'ease-out part, the mouse leave part and make it smooth*/
+#bounce-in:hover {
+    animation-name: bounceIn;
+    animation-duration: 430ms;
+    animation-timing-function: ease-in-out; 
+    animation-fill-mode: forwards;
+}
+/*TODO fix the 'ease-out part, the mouse leave part and make it smooth*/
+#bounce-out:hover {
+    animation-name: bounceOut;
+    animation-duration: .45s;
+    animation-timing-function: ease-in-out; 
+    animation-fill-mode: forwards;
+}
+#spin:hover {
+    animation-name: spin;
+    animation-duration: .85s;
+    animation-timing-function: linear;
+    animation-fill-mode: both; 
+}
+#rotate:hover {
+    transform: rotate(7.5deg);
+}
+#growtate:hover {
+    transform: rotate(5.5deg) scale(1.12, 1.12);
+}
+#float:hover {
+    transform: translate(0px, -10px);
+}
+#sink:hover {
+    transform: translate(0px, 10px);
+}
+#bob:hover {
+    animation-name: bob;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+}
+#hang:hover {
+    transform: translate(0px, 5px);
+    animation-name: hang;
+    animation-duration: .8s;
+    /* animation-delay: .15s; */
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+    
+}
+#skew:hover {
+    transform: skewX(-10deg);
+}
+#skew_forward:hover {
+    transform: matrix(1, 0, -.2, 1, 10, 0 );
+
+}
+#skew_backward:hover {
+    transform: matrix(1, 0, .2, 1, -10, 0 );
+}
+#wobble_horizontal:hover {
+    animation-name: wobbleHorizontal;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_vertical:hover {
+    animation-name: wobbleVertical;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_bottom_right:hover {
+    animation-name: wobbleBottomRight;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_top_right:hover {
+    animation-name: wobbleTopRight;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out;   
+}
+#wobble_bottom_left:hover {
+    animation-name: wobbleBottomLeft;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_top_left:hover {
+    animation-name: wobbleTopLeft;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_top:hover {
+    animation-name: wobbleTop;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_bottom:hover {
+    animation-name: wobbleBottom;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#wobble_skew:hover {
+    animation-name: wobbleSkew;
+    animation-duration: .8s;
+    animation-timing-function: ease-in-out; 
+}
+#buzz:hover {
+    animation-name: buzz;
+    animation-duration: .22s;
+    animation-iteration-count: infinite;
+}
+#buzz_out:hover {
+    /* TODO can probably still just be the buzz animation */
+    animation-name: buzzOut;
+    animation-duration: .22s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-out;
+}
+#forward:hover {
+    transform: translateX(10px);
+}
+#backward:hover {
+    transform: translateX(-10px);
+}
+@keyframes pulse {
+    50%  {transform: scale(.92, .92); }
+    100% {transform: scale(1.01, 1.01); }
+}
+@keyframes pulseGrow {
+    50%  {transform: scale(1.1, 1.1); }
+}
+@keyframes pulseShrink{
+    50%  {transform: scale(.9, .9); }
+}
+@keyframes push {
+    50%  {transform: scale(.72, .72); }
+    100% {transform: scale(1, 1); }
+}
+@keyframes pop {
+    50%  {transform: scale(1.12, 1.12); }
+    100% {transform: scale(1, 1); }
+}
+@keyframes bounceIn {
+    0%   {transform: scale(1, 1);}
+    40%  {transform: scale(1.12, 1.12);}
+    75%  {transform: scale(1.05, 1.05);}
+    100% {transform: scale(1.12, 1.12);}
+}
+@keyframes bounceOut {
+    40% {transform: scale(.85, .85);}
+    75% {transform: scale(1, 1);}
+    100% {transform: scale(.85, .85);}
+}
+@keyframes bob {
+    0% {transform: translate(0px, -5px);}
+    50% {transform: translate(0px, -10px);}
+    100% {transform: translate(0px, -5px);}
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}  
+}
+@keyframes hang {
+    0% {transform: translate(0px, 5px);}
+    50% {transform: translate(0px, 10px);}
+    100% {transform: translate(0px, 5px);}
+}
+@keyframes wobbleHorizontal {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: translate(-5px, 0px);}
+    40% {transform: translate(5px, 0px);}
+    60% {transform: translate(-5px, 0px);}
+    80% {transform: translate(5px, 0px);}
+    100% {transform: translate(0px, 0px);}
+}
+@keyframes wobbleVertical {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: translate(0px, -5px);}
+    40% {transform: translate(0px, 5px);}
+    60% {transform: translate(0px, -5px);}
+    80% {transform: translate(0px, 5px);}
+    100% {transform: translate(0px, 0px);}
+}
+@keyframes wobbleBottomRight {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: translate(5px, 5px);}
+    40% {transform: translate(-5px, -5px);}
+    60% {transform: translate(5px, 5px);}
+    80% {transform: translate(-5px, -5px);}
+    100% {transform: translate(0px, 0px);}
+}
+@keyframes wobbleBottomLeft {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: translate(-5px, 5px);}
+    40% {transform: translate(5px, -5px);}
+    60% {transform: translate(-5px, 5px);}
+    80% {transform: translate(5px, -5px);}
+    100% {transform: translate(0px, 0px);}
+}
+@keyframes wobbleTopLeft {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: translate(-5px, -5px);}
+    40% {transform: translate(5px, 5px);}
+    60% {transform: translate(-5px, -5px);}
+    80% {transform: translate(5px, 5px);}
+    100% {transform: translate(0px, 0px);}
+}
+@keyframes wobbleTopRight {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: translate(5px, -5px);}
+    40% {transform: translate(-5px, 5px);}
+    60% {transform: translate(5px, -5px);}
+    80% {transform: translate(-5px, 5px);}
+    100% {transform: translate(0px, 0px);}
+}
+@keyframes wobbleTop {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: matrix(1, 0, -.2, 1, 5, 0 );}
+    40% {transform: matrix(1, 0, .2, 1, -5, 0 );}
+    60% {transform: matrix(1, 0, -.2, 1, 5, 0 );}
+    80% {transform: matrix(1, 0, .2, 1, -5, 0 );}
+    100% {transform: translate(0px, 0px);}         
+}
+@keyframes wobbleBottom {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: matrix(1, 0, .2, 1, 5, 0 );}
+    40% {transform: matrix(1, 0, -.2, 1, -5, 0 );}
+    60% {transform: matrix(1, 0, .2, 1, 5, 0 );}
+    80% {transform: matrix(1, 0, -.2, 1, -5, 0 );}
+    100% {transform: translate(0px, 0px);}         
+           
+}
+@keyframes wobbleSkew {
+    0% {transform: translate(0px, 0px);}
+    20% {transform: matrix(1, 0, -.2, 1, 0, 0 );}
+    40% {transform: matrix(1, 0, .2, 1,  0, 0 );}
+    60% {transform: matrix(1, 0, -.2, 1, 0, 0 );}
+    80% {transform: matrix(1, 0, .2, 1,  0, 0 );}
+    100% {transform: translate(0px, 0px);}         
+}
+@keyframes buzz {
+    0% {transform: translate(0px, 0px);}
+    25% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+    50% {transform: rotate(1.5deg) translate(3px, 0px);}
+    75% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+    100% {transform: rotate(1.5deg) translate(3px, 0px);}
+}
+@keyframes buzzOut {
+    0% {transform: translate(0px, 0px);}
+    25% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+    50% {transform: rotate(1.5deg) translate(3px, 0px);}
+    75% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+    100% {transform: rotate(1.5deg) translate(3px, 0px);}   
+}
