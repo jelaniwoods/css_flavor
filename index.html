@@ -102,11 +102,69 @@
         #sink:hover {
             transform: translate(0px, 10px);
         }
+        #bob {
+            /* transition: transform .15s ease-in-out;    */
+        }
         #bob:hover {
-            transform: translate(0px, -5px);
+            /* transform: translate(0px, -0px); */
             animation-name: bob;
             animation-duration: .8s;
+            /* animation-delay: .15s; */
             animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out; 
+        }
+        #hang:hover {
+            transform: translate(0px, 5px);
+            animation-name: hang;
+            animation-duration: .8s;
+            /* animation-delay: .15s; */
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out; 
+            
+        }
+        #skew:hover {
+            transform: skewX(-10deg);
+        }
+        #skew_forward:hover {
+            transform: matrix(1, 0, -.2, 1, 10, 0 );
+
+        }
+        #skew_backward:hover {
+            transform: matrix(1, 0, .2, 1, -10, 0 );
+        }
+        #wobble_horizontal:hover {
+            animation-name: wobbleHorizontal;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #wobble_vertical:hover {
+            animation-name: wobbleVertical;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #wobble_bottom_right:hover {
+            animation-name: wobbleBottomRight;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #wobble_top_right:hover {
+            animation-name: wobbleTopRight;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out;   
+        }
+        #wobble_bottom_left:hover {
+            animation-name: wobbleBottomLeft;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #wobble_top_left:hover {
+            animation-name: wobbleTopLeft;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #wobble_top:hover {
+            animation-name: wobbleTop;
+            animation-duration: .8s;
             animation-timing-function: ease-in-out; 
         }
         @keyframes pulse {
@@ -139,12 +197,66 @@
             100% {transform: scale(.85, .85);}
         }
         @keyframes bob {
+            0% {transform: translate(0px, -5px);}
             50% {transform: translate(0px, -10px);}
             100% {transform: translate(0px, -5px);}
         }
         @keyframes spin {
             50% {transform: rotate(180deg);}
             100% {transform: rotate(360deg);}  
+        }
+        @keyframes hang {
+            0% {transform: translate(0px, 5px);}
+            50% {transform: translate(0px, 10px);}
+            100% {transform: translate(0px, 5px);}
+        }
+        @keyframes wobbleHorizontal {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: translate(-5px, 0px);}
+            40% {transform: translate(5px, 0px);}
+            60% {transform: translate(-5px, 0px);}
+            80% {transform: translate(5px, 0px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        @keyframes wobbleVertical {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: translate(0px, -5px);}
+            40% {transform: translate(0px, 5px);}
+            60% {transform: translate(0px, -5px);}
+            80% {transform: translate(0px, 5px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        @keyframes wobbleBottomRight {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: translate(5px, 5px);}
+            40% {transform: translate(-5px, -5px);}
+            60% {transform: translate(5px, 5px);}
+            80% {transform: translate(-5px, -5px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        @keyframes wobbleBottomLeft {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: translate(-5px, 5px);}
+            40% {transform: translate(5px, -5px);}
+            60% {transform: translate(-5px, 5px);}
+            80% {transform: translate(5px, -5px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        @keyframes wobbleTopLeft {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: translate(-5px, -5px);}
+            40% {transform: translate(5px, 5px);}
+            60% {transform: translate(-5px, -5px);}
+            80% {transform: translate(5px, 5px);}
+            100% {transform: translate(0px, 0px);}
+        }
+        @keyframes wobbleTopRight {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: translate(5px, -5px);}
+            40% {transform: translate(-5px, 5px);}
+            60% {transform: translate(5px, -5px);}
+            80% {transform: translate(-5px, 5px);}
+            100% {transform: translate(0px, 0px);}
         }
     </style>
 </head>
@@ -183,11 +295,19 @@
         <a id="bob" href="">Bob</a>
     </div>
     <div class="links">
-        <a id="" href=""></a>
-        <a id="" href=""></a>
-        <a id="" href=""></a>
-        <a id="" href=""></a>
-        <a id="" href=""></a>
+        <a id="hang" href="">Hang</a>
+        <a id="skew" href="">Skew</a>
+        <a id="skew_forward" href="">Skew Forward</a>
+        <a id="skew_backward" href="">Skew Backward</a>
+        <a id="wobble_horizontal" href="">Wobble Horizontal</a>
+    </div>
+    <div class="links">
+        <a id="wobble_vertical" href="">Wobble Vertical</a>
+        <a id="wobble_bottom_right" href="">Wobble to Bottom Right</a>
+        <a id="wobble_bottom_left" href="">Wobble to Bottom Left</a>
+        <a id="wobble_top_right" href="">Wobble to Top Right</a>
+        <a id="wobble_top_left" href="">Wobble to Top Left</a>
+        <a id="wobble_top" href="">Wobble Top</a>
     </div>
 </body>
 </html>
