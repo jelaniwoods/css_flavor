@@ -86,9 +86,9 @@
         }
         #spin:hover {
             animation-name: spin;
-            animation-duration: .8s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear; 
+            animation-duration: .85s;
+            animation-timing-function: linear;
+            animation-fill-mode: both; 
         }
         #rotate:hover {
             transform: rotate(7.5deg);
@@ -167,6 +167,34 @@
             animation-duration: .8s;
             animation-timing-function: ease-in-out; 
         }
+        #wobble_bottom:hover {
+            animation-name: wobbleBottom;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #wobble_skew:hover {
+            animation-name: wobbleSkew;
+            animation-duration: .8s;
+            animation-timing-function: ease-in-out; 
+        }
+        #buzz:hover {
+            animation-name: buzz;
+            animation-duration: .22s;
+            animation-iteration-count: infinite;
+        }
+        #buzz_out:hover {
+            /* TODO can probably still just be the buzz animation */
+            animation-name: buzzOut;
+            animation-duration: .22s;
+            animation-iteration-count: 2;
+            animation-timing-function: ease-out;
+        }
+        #forward:hover {
+            transform: translateX(10px);
+        }
+        #backward:hover {
+            transform: translateX(-10px);
+        }
         @keyframes pulse {
             50%  {transform: scale(.92, .92); }
             100% {transform: scale(1.01, 1.01); }
@@ -202,7 +230,7 @@
             100% {transform: translate(0px, -5px);}
         }
         @keyframes spin {
-            50% {transform: rotate(180deg);}
+            0% {transform: rotate(0deg);}
             100% {transform: rotate(360deg);}  
         }
         @keyframes hang {
@@ -258,6 +286,46 @@
             80% {transform: translate(-5px, 5px);}
             100% {transform: translate(0px, 0px);}
         }
+        @keyframes wobbleTop {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: matrix(1, 0, -.2, 1, 5, 0 );}
+            40% {transform: matrix(1, 0, .2, 1, -5, 0 );}
+            60% {transform: matrix(1, 0, -.2, 1, 5, 0 );}
+            80% {transform: matrix(1, 0, .2, 1, -5, 0 );}
+            100% {transform: translate(0px, 0px);}         
+        }
+        @keyframes wobbleBottom {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: matrix(1, 0, .2, 1, 5, 0 );}
+            40% {transform: matrix(1, 0, -.2, 1, -5, 0 );}
+            60% {transform: matrix(1, 0, .2, 1, 5, 0 );}
+            80% {transform: matrix(1, 0, -.2, 1, -5, 0 );}
+            100% {transform: translate(0px, 0px);}         
+                   
+        }
+        @keyframes wobbleSkew {
+            0% {transform: translate(0px, 0px);}
+            20% {transform: matrix(1, 0, -.2, 1, 0, 0 );}
+            40% {transform: matrix(1, 0, .2, 1,  0, 0 );}
+            60% {transform: matrix(1, 0, -.2, 1, 0, 0 );}
+            80% {transform: matrix(1, 0, .2, 1,  0, 0 );}
+            100% {transform: translate(0px, 0px);}         
+        }
+        @keyframes buzz {
+            0% {transform: translate(0px, 0px);}
+            25% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+            50% {transform: rotate(1.5deg) translate(3px, 0px);}
+            75% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+            100% {transform: rotate(1.5deg) translate(3px, 0px);}
+        }
+        @keyframes buzzOut {
+            0% {transform: translate(0px, 0px);}
+            25% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+            50% {transform: rotate(1.5deg) translate(3px, 0px);}
+            75% {transform: rotate(-1.5deg) translate(-3px, 0px);}
+            100% {transform: rotate(1.5deg) translate(3px, 0px);}
+            
+        }
     </style>
 </head>
 <body>
@@ -308,6 +376,14 @@
         <a id="wobble_top_right" href="">Wobble to Top Right</a>
         <a id="wobble_top_left" href="">Wobble to Top Left</a>
         <a id="wobble_top" href="">Wobble Top</a>
+    </div>
+    <div class="links">
+        <a id="wobble_bottom" href="">Wobble Bottom</a>
+        <a id="wobble_skew" href="">Wobble Skew</a>
+        <a id="buzz" href="">Buzz</a>
+        <a id="buzz_out" href="">Buzz Out</a>
+        <a id="forward" href="">Forward</a>
+        <a id="backward" href="">Backward</a>
     </div>
 </body>
 </html>
