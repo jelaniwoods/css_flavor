@@ -108,9 +108,10 @@
     transform: matrix(1, 0, .2, 1, -10, 0 );
 }
 #wobble_horizontal:hover {
-    animation-name: wobbleHorizontal;
+    animation: wobbleHorizontal .8s cubic-bezier(.36,.07,.19,.97) both;
+    /* animation-name: wobbleHorizontal;
     animation-duration: .8s;
-    animation-timing-function: ease-in-out; 
+    animation-timing-function: ease-in-out;  */
 }
 #wobble_vertical:hover {
     animation-name: wobbleVertical;
@@ -214,12 +215,27 @@
     100% {transform: translate(0px, 5px);}
 }
 @keyframes wobbleHorizontal {
-    0% {transform: translate(0px, 0px);}
+    /* 0% {transform: translate(0px, 0px);}
     20% {transform: translate(-5px, 0px);}
     40% {transform: translate(5px, 0px);}
     60% {transform: translate(-5px, 0px);}
     80% {transform: translate(5px, 0px);}
-    100% {transform: translate(0px, 0px);}
+    100% {transform: translate(0px, 0px);} */
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
 }
 @keyframes wobbleVertical {
     0% {transform: translate(0px, 0px);}
