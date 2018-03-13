@@ -300,6 +300,171 @@
             -webkit-transform: scale(2);
             transform: scale(2);
         }
+
+        #shutter_in_h {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            position: relative;
+            background: #fff;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        #shutter_in_h:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+            -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        #shutter_in_h:hover, #shutter_in_h:focus, #shutter_in_h:active {
+            color: #000;
+        }
+        #shutter_in_h:hover:before, #shutter_in_h:focus:before, #shutter_in_h:active:before {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+        #shutter_out_h {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            position: relative;
+            background: #333;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        #shutter_out_h:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        #shutter_out_h:hover, #shutter_out_h:focus, #shutter_out_h:active {
+            color: #000;
+        }
+        #shutter_out_h:hover:before, #shutter_out_h:focus:before, #shutter_out_h:active:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+        #shutter_in_v {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            position: relative;
+            background: #fff;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        #shutter_in_v:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+            -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        #shutter_in_v:hover, #shutter_in_v:focus, #shutter_in_v:active {
+            color: black;
+        }
+        #shutter_in_v:hover:before, #shutter_in_v:focus:before, #shutter_in_v:active:before {
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+        }
+        #shutter_out_v {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+            position: relative;
+            background: #333;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+        }
+        #shutter_out_v:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+            -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        #shutter_out_v:hover, #shutter_out_v:focus, #shutter_out_v:active {
+            color: black;
+        }
+        #shutter_out_v:hover:before, #shutter_out_v:focus:before, #shutter_out_v:active:before {
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+        }
+        
+        #shutter_out_v {
+
+        }
         @keyframes backPulse {
             50% {opacity: .6;}
         }
@@ -414,6 +579,13 @@
             <a href="" id="rectangle_in">Rectangle In</a>
             <a href="" id="rectangle_out">Rectangle Out</a>
         </div>    
+    </div>
+    <div class="links">
+        <a id="shutter_in_h">Shutter in Horizontal</a>
+        <a id="shutter_in_v"> Shutter in Vertical</a>
+        <a id="shutter_out_h">Shutter out Horizontal</a>
+        <a id="shutter_out_v">Shutter out Vertical</a>
+        <a id="shutter"> </a>
     </div>
     
 </body>
