@@ -633,14 +633,23 @@ transform: scale(2);
     height: 160px;
     perspective: 500px;
   }
-  .flipcard.v:hover .front, .flipcard.v.flip .front{
+  .flipcard.up:hover .front, .flipcard.up.flip .front{
     transform: rotateX(180deg);
   }
-  .flipcard.v:hover .back, .flipcard.v.flip .back{
+  .flipcard.up:hover .back, .flipcard.up.flip .back{
     transform: rotateX(0deg);
   }
-  .flipcard.v .back{
+  .flipcard.up .back{
     transform: rotateX(-180deg);
+  }
+  .flipcard.down:hover .front, .flipcard.down.flip .front{
+    transform: rotateX(-180deg);
+  }
+  .flipcard.down:hover .back, .flipcard.down.flip .back{
+    transform: rotateX(0deg);
+  }
+  .flipcard.down .back{
+    transform: rotateX(180deg);
   }
   .flipcard.right:hover .front, .flipcard.right.flip .front{
     transform: rotateY(180deg);
@@ -651,15 +660,23 @@ transform: scale(2);
   .flipcard.right .back{
     transform: rotateY(-180deg);
   }
-  .flipcard .front, .flipcard .back
-  {
+  .flipcard.left:hover .front, .flipcard.left.flip .front{
+    transform: rotateY(-180deg);
+  }
+  .flipcard.left:hover .back, .flipcard.left.flip .back{
+    transform: rotateY(0deg);
+  }
+  .flipcard.left .back{
+    transform: rotateY(180deg);
+  }
+  .flipcard .front, .flipcard .back {
     position:absolute;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     transition: all 0.5s ease-in;
     color: white;
-    background-color: #000;
+    background-color: #333;
     padding: 10px;
     backface-visibility: hidden;
   }
@@ -691,17 +708,7 @@ transform: scale(2);
     padding: 10px;
     backface-visibility: hidden;
   }
-/* #flip_right, #flip_left,  
-#flip_up, #flip_down {
-    backface-visibility: hidden;
 
-} */
-
-/* .flip #flip_right .flip.v.flip .front{ */
-
-#flip_right:hover  {
-    transform: rotateY(180deg);
-}
 
 
 @keyframes pulse {
