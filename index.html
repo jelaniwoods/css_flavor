@@ -7,7 +7,7 @@
     <title>Flavor Town</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        #overline_left {
+        .overline_left {
             display: inline-block;
             vertical-align: middle;
             transform: perspective(1px) translateZ(0);
@@ -15,7 +15,7 @@
             position: relative;
             overflow: hidden;
         }
-        #overline_left:before {
+        .overline_left:before {
             content: "";
             position: absolute;
             z-index: -1;
@@ -26,10 +26,10 @@
             height: 4px;
             transition: right .3s ease-out;
         }
-        #overline_left:hover:before, #overline_left:focus:before, #overline_left:active:before {
+        .overline_left:hover:before, .overline_left:focus:before, .overline_left:active:before {
             right: 0;
         }
-        #overline_right {
+        .overline_right {
             display: inline-block;
             vertical-align: middle;
             transform: perspective(1px) translateZ(0);
@@ -37,7 +37,7 @@
             position: relative;
             overflow: hidden;
         }
-        #overline_right:before {
+        .overline_right:before {
             content: "";
             position: absolute;
             z-index: -1;
@@ -48,22 +48,20 @@
             height: 4px;
             transition: left .3s ease-out;
         }
-        #overline_right:hover:before, #overline_right:focus:before, #overline_right:active:before {
+        .overline_right:hover:before, .overline_right:focus:before, .overline_right:active:before {
             left: 0;
         }
-        
-
        .m {
-  font-size: 1.9em;
-  text-transform: uppercase;
-  
-  font-weight: 600;
-}
+        font-size: 1.9em;
+        text-transform: uppercase;
+        
+        font-weight: 600;
+        }
 
-.m .letter {
-  display: inline-block;
-  line-height: 1em;
-}
+        .m .letter {
+        display: inline-block;
+        line-height: 1em;
+        }
     </style>
 </head>
 <body>

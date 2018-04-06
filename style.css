@@ -381,6 +381,8 @@ transform: scale(2);
 }
 .radial_in:hover, .radial_in:focus, .radial_in:active {
     color: black;
+    background: #fff;
+    /* not sure why i needed to add this background here when it should already be white in .radial_in TODO */
 }
 .radial_in:hover:before, .radial_in:focus:before, .radial_in:active:before {
     -webkit-transform: scale(0);
@@ -420,6 +422,8 @@ transform: scale(2);
 }
 .rectangle_in:hover, .rectangle_in:focus, .rectangle_in:active {
     color: black;
+    background: #fff;
+    /* TODO same here */
 }
 .rectangle_in:hover:before, .rectangle_in:focus:before, .rectangle_in:active:before {
     -webkit-transform: scale(0);
@@ -500,8 +504,9 @@ transform: scale(2);
 }
 .shutter_in_h:hover, .shutter_in_h:focus, .shutter_in_h:active {
     color: #000;
+    background: #fff;
 }
-.shutter_in_h:hover:before, .shutter_in_h:focus:before, #.hutter_in_h:active:before {
+.shutter_in_h:hover:before, .shutter_in_h:focus:before, .shutter_in_h:active:before {
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
 }
@@ -580,6 +585,7 @@ transform: scale(2);
 }
 .shutter_in_v:hover, .shutter_in_v:focus, .shutter_in_v:active {
     color: black;
+    background: #fff;
 }
 .shutter_in_v:hover:before, .shutter_in_v:focus:before, .shutter_in_v:active:before {
     -webkit-transform: scaleY(0);
